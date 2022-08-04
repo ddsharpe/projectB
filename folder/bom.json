@@ -8,6 +8,7 @@
         {
           "repository": "xxxx",
           "name": "component1",
+          "hack": "ryan was here",
           "images": [
             {
               "image": "xxxx",
