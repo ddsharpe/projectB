@@ -1,7 +1,9 @@
+# Test automated pull requests
 name: Automated-Pull-Request
+
 on:
   push:
-    branches: ['from-projectA']
+    branches: [ from-projectA ]
 
 jobs:
   pull-request:
