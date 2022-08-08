@@ -15,10 +15,16 @@ jobs:
 
       - uses: repo-sync/pull-request@v2
         name: pull-request
+        id: open-pr
         with:
           destination_branch: "main"
           pr_title: "Pulling ${{ github.ref }} into main"
-          pr_body: "👑 *An automated PR*"
+          pr_body: "*Automated Pull Request*"
           pr_reviewer: "ddsharpe"
           pr_draft: false
           github_token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Enable Automatic Merge
+        run: gh pr merge --auto --merge "$PR_URL"
+        env:
+          PR_URL: ${{steps.open-pr.outputs.pr_url}}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
