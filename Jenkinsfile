@@ -4,8 +4,13 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'echo HELLO WORLD '
+                message = getMessage()
+                sh 'echo ${message}'
             }
         }
     }
+}
+
+def getMessage() {
+    return "Hello World " + env.BRANCH_NAME
 }
