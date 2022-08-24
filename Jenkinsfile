@@ -1,11 +1,13 @@
 pipeline {
     agent any
 
+    environment {
+        MESSAGE = getMessage()
+    }
     stages {
         stage('build') {
             steps {
-                message = getMessage()
-                sh 'echo ${message}'
+                sh 'echo ${MESSAGE}'
             }
         }
     }
