@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'echo HELLO WORLD ${env.BRANCH_NAME}'
+                sh 'echo HELLO WORLD ' + ${env.BRANCH_NAME}
             }
         }
     }
