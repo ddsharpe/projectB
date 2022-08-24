@@ -7,3 +7,5 @@ pipeline {
                 sh 'echo HELLO WORLD ${env.BRANCH_NAME}'
             }
         }
+    }
+}
