@@ -18,7 +18,11 @@ jobs:
         id: open-pr
         run: |
           echo 'PR_URL<<EOF' >> $GITHUB_ENV
-          gh pr create -B "main" -t "Pulling ${{ github.ref }} into main" -b "*Automated Pull Request*" -r "ddsharpe"
+          gh pr create \
+            -B "main" \
+            -t "Pulling ${{ github.ref }} into main" \
+            -b "*Automated Pull Request*" \
+            -r "ddsharpe"
           echo 'EOF' >> $GITHUB_ENV
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
